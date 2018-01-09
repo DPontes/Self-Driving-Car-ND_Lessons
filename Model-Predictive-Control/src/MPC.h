@@ -2,7 +2,7 @@
 #define MPC_H
 
 #include <vector>
-#include "Eigen3.3/Eigen/Core"
+#include "Eigen-3.3/Eigen/Core"
 
 using namespace std;
 
@@ -16,3 +16,5 @@ class MPC{
   // Return the next state and actuations as a vector
   vector<double> Solve(Eigen::VectorXd x0, Eigen::VectorXd coeffs);
 };
+
+#endif // MPC_H
