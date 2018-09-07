@@ -1,9 +1,9 @@
+#include <math.h>
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <math.h>
 #include <vector>
-#include "classifier.h"
+#include "./classifier.h"
 
 using namespace std;
 using Eigen::ArrayXd;
@@ -63,15 +63,15 @@ void GNB::train(vector<vector<double>> data, vector<string> labels) {
     for (int i = 0; i < labels.size(); i++) {
         if (labels[i] == "left") {
             // Conversion of data to ArrayXd
-            left_means += ArrayXd::Map(data[i].data(),data[i].size());
+            left_means += ArrayXd::Map(data[i].data(), data[i].size());
             left_size += 1;
         } else if (labels[i] == "keep") {
             // Conversion of data to ArrayXd
-            keep_means += ArrayXd::Map(data[i].data(),data[i].size());
+            keep_means += ArrayXd::Map(data[i].data(), data[i].size());
             keep_size += 1;
         } else if (labels[i] == "right") {
             // Conversion of data to ArrayXd
-            right_means += ArrayXd::Map(data[i].data(),data[i].size());
+            right_means += ArrayXd::Map(data[i].data(), data[i].size());
             right_size += 1;
         }
     }
@@ -92,7 +92,8 @@ void GNB::train(vector<vector<double>> data, vector<string> labels) {
         } else if (labels[i] == "keep") {
             keep_sds += (data_point - keep_means) * (data_point - keep_means);
         } else if (labels[i] == "right") {
-            right_sds += (data_point - right_means) * (data_point - right_means);
+            right_sds += (data_point - right_means) * (data_point
+                                                                - right_means);
         }
     }
 

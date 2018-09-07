@@ -1,8 +1,8 @@
+#include <math.h>
 #include <iostream>
 #include <fstream>
-#include <math.h>
 #include <vector>
-#include "classifier.h"
+#include "./classifier.h"
 
 using namespace std;
 
@@ -16,7 +16,7 @@ vector<vector<double>> Load_State(string file_name) {
         vector<double> x_coordinates;
         string token;
 
-        while ( getline(iss, token,',')) {
+        while (getline(iss, token, ',')) {
             x_coordinates.push_back(stod(token));
         }
         state_out.push_back(x_coordinates);

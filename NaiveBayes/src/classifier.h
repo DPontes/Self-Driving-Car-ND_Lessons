@@ -1,9 +1,10 @@
-#ifndef CLASSIFIER_H
-#define CLASSIFIER_H
+#ifndef NAIVEBAYES_SRC_CLASSIFIER_H_
+#define NAIVEBAYES_SRC_CLASSIFIER_H_
+#include <math.h>
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include <math.h>
+#include <string>
 #include <vector>
 #include "Eigen/Dense"
 
@@ -11,7 +12,7 @@ using namespace std;
 using Eigen::ArrayXd;
 
 class GNB {
-public:
+ public:
     vector<string> possible_labels = {"left", "keep", "right"};
 
     ArrayXd left_means;
@@ -35,7 +36,6 @@ public:
     void train(vector<vector<double>> data, vector<string> labels);
 
     string predict(vector<double>);
-
 };
 
-#endif
+#endif  // NAIVEBAYES_SRC_CLASSIFIER_H_
