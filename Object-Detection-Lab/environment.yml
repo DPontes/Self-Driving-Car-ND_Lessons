@@ -13,4 +13,4 @@ dependencies:
     - imageio==2.1.2
     - pip:
         - moviepy
-        - tensorflow==1.4
+
